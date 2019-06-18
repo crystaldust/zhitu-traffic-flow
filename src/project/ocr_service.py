@@ -5,7 +5,7 @@ import numpy as np
 import cv2
 import os
 import utils.ocr as ocr_utils
-crnn_model_path = os.environ.get('crnn_model_path') or os.getcwd() + '/../data/crnn.h5'
+crnn_model_path = os.environ.get('crnn_model_path') or os.getcwd() + '/../../data/crnn.h5'
 ocr_utils.prepare_model(crnn_model_path)
 
 def store_text(text):

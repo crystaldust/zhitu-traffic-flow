@@ -12,11 +12,11 @@ CHAR_RECOGNITION_SERVICE_URL = os.environ.get('CHAR_RECOGNITION_SERVICE_URL') or
 
 cwd, _ = os.path.split(os.path.abspath(__file__))
 # def prepare(yolo_anchors_path, yolo_model_path, east_model_path, east_json_path):
-yolo_anchors_path = os.environ.get('yolo_anchor_path') or cwd + '/' + '../data/yolov3_anchors.txt'
-yolo_model_path = os.environ.get('yolo_model_path') or cwd + '/' + '../data/yolov3.h5'
+yolo_anchors_path = os.environ.get('yolo_anchor_path') or cwd + '/' + '../../data/yolov3_anchors.txt'
+yolo_model_path = os.environ.get('yolo_model_path') or cwd + '/' + '../../data/yolov3.h5'
 
-east_json_path = os.environ.get('east_json_path') or cwd + '/' + '../data/model.json'
-east_model_path = os.environ.get('east_model_path') or cwd + '/' + '../data/east.h5'
+east_json_path = os.environ.get('east_json_path') or cwd + '/' + '../../data/model.json'
+east_model_path = os.environ.get('east_model_path') or cwd + '/' + '../../data/east.h5'
 
 
 
