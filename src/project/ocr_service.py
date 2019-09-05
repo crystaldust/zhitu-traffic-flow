@@ -1,10 +1,15 @@
+import numpy as np
+import os
+import utils.ocr as ocr_utils
+
 from flask import Flask, request
 app = Flask("ocr_service")
 
+import keras.backend as K
+
 import numpy as np
 import cv2
-import os
-import utils.ocr as ocr_utils
+
 crnn_model_path = os.environ.get('crnn_model_path') or os.getcwd() + '/../../data/crnn.h5'
 ocr_utils.prepare_model(crnn_model_path)
 
@@ -21,7 +26,7 @@ def ocr():
         return 'Missing time-range header', 400
     try:
         image_ary = np.frombuffer(r.data, np.uint8)
-        img = cv2.imdecode(image_ary, cv2.IMREAD_COLOR)
+        img = cv2.imdecode(image_ary, cv2.IMREAD_GRAYSCALE)
     except Exception as e:
         print(e)
         return "Invalid image data", 400
